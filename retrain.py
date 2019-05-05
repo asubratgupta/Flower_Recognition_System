@@ -1,25 +1,3 @@
-# retrain.py
-#
-# original file by Google:
-# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py
-"""
-Transfer learning with Inception v3 or Mobilenet models.
-
-This example shows how to take a Inception v3 or Mobilenet model trained on ImageNet images,
-and train a new top layer that can recognize other classes of images.
-
-The top layer receives as input a 2048-dimensional vector (1001-dimensional for Mobilenet) for each image. We train a
-softmax layer on top of this representation. Assuming the softmax layer contains N labels, this corresponds to
-learning N + 2048*N (or 1001*N)  model parameters corresponding to the learned biases and weights.
-
-You can replace the image_dir argument with any folder containing subfolders of images. The label for each image is
-taken from the name of the subfolder it's in.
-
-This produces a new model file that can be loaded and run by any TensorFlow program, for example the label_image sample code.
-
-To use with TensorBoard:
-tensorboard --logdir /path/to/tensorboard_logs
-"""
 from datetime import datetime
 import hashlib
 import os
